@@ -1,9 +1,5 @@
-let loaded = ( eventLoaded ) => {
-  
-    window.alert("landing page loaded");
-    console.log( eventLoaded );
+let loaded = () => {
     let myform = document.getElementById('formulario-pagina');
-    debugger;
 
     myform.addEventListener('submit', ( eventSubmit ) => { 
         eventSubmit.preventDefault();
