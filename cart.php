@@ -101,9 +101,14 @@ session_start();
 							</thead>
 							<tbody>
 								<?php
-								if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+								$final_price = 0;
+								if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) { 
+
 									foreach ($_SESSION['cart'] as $key => $item) {
-										$total_price = $item['price'];
+										$total_price = $item['price'] * $item['quantity'];
+										$final_price += $total_price; 
+
+										$final_quantity = $item['quantity'];
 								?>
 										<tr>
 											<td class="product-thumbnail">
@@ -116,11 +121,11 @@ session_start();
 											<td>
 												<div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
 													<div class="input-group-prepend">
-														<button class="btn btn-outline-black decrease" type="button">&minus;</button>
+														<button class="btn btn-outline-black decrease" type="button" onclick="updateQuantity(<?php echo $key; ?>, 'decrease')">&minus;</button>
 													</div>
-													<input type="text" class="form-control text-center quantity-amount" value="1" placeholder="">
+													<input type="text" class="form-control text-center quantity-amount" value="<?php echo $item['quantity']; ?>" readonly>
 													<div class="input-group-append">
-														<button class="btn btn-outline-black increase" type="button">&plus;</button>
+														<button class="btn btn-outline-black increase" type="button" onclick="updateQuantity(<?php echo $key; ?>, 'increase')">&plus;</button>
 													</div>
 												</div>
 											</td>
@@ -129,7 +134,7 @@ session_start();
 												<a href="back-end/remove-from-cart.php?key=<?php echo $key; ?>" class="btn btn-black btn-sm">X</a>
 											</td>
 										</tr>
-								<?php
+									<?php
 									}
 								} else {
 									echo "<tr><td colspan='6'>El carrito está vacío.</td></tr>";
@@ -145,10 +150,10 @@ session_start();
 				<div class="col-md-6">
 					<div class="row mb-5">
 						<div class="col-md-6 mb-3 mb-md-0">
-							<button class="btn btn-black btn-sm btn-block">Update Cart</button>
+							<button class="btn btn-black btn-sm btn-block" onclick="window.location.href='index.php';">Actualizar carrito</button>
 						</div>
 						<div class="col-md-6">
-							<button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+							<button class="btn btn-outline-black btn-sm btn-block" onclick="window.location.href='index.php';">Continuar comprando</button>
 						</div>
 					</div>
 					<div class="row">
@@ -169,7 +174,7 @@ session_start();
 						<div class="col-md-7">
 							<div class="row">
 								<div class="col-md-12 text-right border-bottom mb-5">
-									<h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+									<h3 class="text-black h4 text-uppercase">Total del carrito</h3>
 								</div>
 							</div>
 							<div class="row mb-3">
@@ -177,7 +182,7 @@ session_start();
 									<span class="text-black">Subtotal</span>
 								</div>
 								<div class="col-md-6 text-right">
-									<strong class="text-black">$230.00</strong>
+									<strong class="text-black">$<?php echo number_format($final_price, 2); ?></strong>
 								</div>
 							</div>
 							<div class="row mb-5">
@@ -185,13 +190,13 @@ session_start();
 									<span class="text-black">Total</span>
 								</div>
 								<div class="col-md-6 text-right">
-									<strong class="text-black">$230.00</strong>
+									<strong class="text-black">$<?php echo number_format($final_price, 2); ?></strong>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col-md-12">
-									<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+									<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location.href='index.php';">Finalizar compra</button>
 								</div>
 							</div>
 						</div>
@@ -207,7 +212,7 @@ session_start();
 		<div class="container relative">
 
 			<div class="sofa-img">
-				<img src="images/sofa.png" alt="Image" class="img-fluid">
+				<img src="images/8-bit-sushi-cats-art-bdjin4h9ax5b3kbb.gif" alt="Image" class="img-fluid" id="bit-gif">
 			</div>
 
 			<div class="row">
@@ -313,6 +318,28 @@ session_start();
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
+	<script>
+		function updateQuantity(key, action) {
+			const form = document.createElement('form');
+			form.method = 'POST';
+			form.action = 'back-end/update-quantity.php';
+
+			const inputKey = document.createElement('input');
+			inputKey.type = 'hidden';
+			inputKey.name = 'key';
+			inputKey.value = key;
+			form.appendChild(inputKey);
+
+			const inputAction = document.createElement('input');
+			inputAction.type = 'hidden';
+			inputAction.name = 'action';
+			inputAction.value = action;
+			form.appendChild(inputAction);
+
+			document.body.appendChild(form);
+			form.submit();
+		}
+	</script>
 </body>
 
 </html>
