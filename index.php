@@ -42,9 +42,9 @@
 			<div class="collapse navbar-collapse" id="navbarsFurni">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.html">Inicio</a>
+						<a class="nav-link" href="index.php">Inicio</a>
 					</li>
-					<li><a class="nav-link" href="#catalogo">Catálogo</a></li>
+					<li><a class="nav-link" href="shop.php">Catálogo</a></li>
 					<li><a class="nav-link" href="#about-us">Acerca de nosotros</a></li>
 					<li><a class="nav-link" href="#servicios">Servicios</a></li>
 					<li><a class="nav-link" href="#noticias">Noticias</a></li>
@@ -69,7 +69,7 @@
 						<h1>Nuevas tarjetas gráficas serie <span clsas="d-block">RTX 40</span></h1>
 						<p class="mb-4">Las GPUs NVIDIA® GeForce RTX™ Serie 40 son más que rápidas para los jugadores y los creadores. Están impulsadas por
 							la arquitectura ultra eficiente NVIDIA Ada Lovelace que ofrece un salto cuántico tanto en rendimiento como en gráficos impulsados por IA.</p>
-						<p><a href="" class="btn btn-secondary me-2">Reservar ahora</a><a href="#" class="btn btn-white-outline">Ver catálogo</a></p>
+						<p><a href="shop.php" class="btn btn-secondary me-2">Reservar ahora</a><a href="#" class="btn btn-white-outline">Ver catálogo</a></p>
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -91,7 +91,7 @@
 				<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
 					<h2 class="mb-4 section-title">Nuevos procesadores Intel y AMD en el catálogo</h2>
 					<p class="mb-4">Descubre los últimos procesadores Intel y AMD en nuestra tienda. Ya sea para gaming, diseño o programación, tenemos el modelo perfecto para ti. </p>
-					<p><a href="shop.html" class="btn">Ver catálogo</a></p>
+					<p><a href="shop.php" class="btn">Ver catálogo</a></p>
 				</div>
 				<!-- End Column 1 -->
 
