@@ -21,40 +21,41 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+		<title>Silverhand Components</title>
 	</head>
 
 	<body>
 
 		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar  navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar" id="menu">
 
-			<div class="container">
-				<a class="navbar-brand" href="index.php">Furni<span>.</span></a>
+<div class="container" id="menu-navegacion">
+	<img src="images/05b797331b8e29dea04657dd7fc7d3c86554cd8fr1-630-630v2_hq-removebg-preview.png" class="img-fluid" id="foto-logo">
+	<a class="navbar-brand" href="index.html">Silverhand Components<span>.</span></a>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item ">
-							<a class="nav-link" href="index.php">Inicio</a>
-						</li>
-						<li class="active"><a class="nav-link" href="shop.html">Catálogo</a></li>
-						<li><a class="nav-link" href="about.html">Acerca de nosotros</a></li>
-						<li><a class="nav-link" href="services.html">Servicios</a></li>
-						<li><a class="nav-link" href="blog.html">Noticias</a></li>
-					</ul>
+	<div class="collapse navbar-collapse" id="navbarsFurni">
+		<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="index.php">Inicio</a>
+			</li>
+			<li><a class="nav-link" href="shop.php">Catálogo</a></li>
+			<li><a class="nav-link" href="#about-us">Acerca de nosotros</a></li>
+			<li><a class="nav-link" href="#servicios">Servicios</a></li>
+			<li><a class="nav-link" href="#noticias">Noticias</a></li>
+		</ul>
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
-					</ul>
-				</div>
-			</div>
-				
-		</nav>
+		<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+			<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+			<li><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
+		</ul>
+	</div>
+</div>
+
+</nav>
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
@@ -63,7 +64,7 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Shop</h1>
+								<h1>Catalogo</h1>
 							</div>
 						</div>
 						<div class="col-lg-7">
@@ -165,36 +166,82 @@
 					</div> 
 					<!-- End Column 2 -->
 
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">$78.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">$43.00</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 4 -->
+					
 
 		      	</div>
 		    </div>
+
+	<div class="review-section">
+    <h2>Submit a Review</h2>
+    <form action="back-end/submit_review.php" method="post">
+        <input type="hidden" name="product_id" value="product_id_here">
+        <label for="rating">Rating:</label>
+        <input type="number" name="rating" min="1" max="5" required>
+        <label for="review">Review:</label>
+        <textarea name="review" required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+</div>
+
+<div id="reviews-container">
+    <?php
+   # $productId = 'product_id_here'; 
+    include 'back-end/get_reviews.php';
+    ?>
+</div> 
+
+<div class="subscription-form">
+						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Comenta Aqui sobre nuestros productos actuales!</span></h3>
+
+						<form action="back-end/submit_review.php" method="post" class="row g-3" id="formulario-pagina">
+				
+							<div>
+								<select name="product_name" class="form-control" id="selectJuego">
+									<option  value="" disabled selected>Elige un producto</option>
+									<option value="Intel® Core i9-14900k">Intel® Core i9-14900k</option>
+									<option  value="AMD Ryzen™ 9 7900X">AMD Ryzen™ 9 7900X</option>
+									<option  value="AMD Ryzen™ 7 7700X">AMD Ryzen™ 7 7700X</option>
+									<option  value="PlayStation 5">PlayStation 5</option>
+									<option  value="XBOX Series X/S">XBOX Series X/S</option>
+									<option  value="Nintendo Switch">Nintendo Switch</option>
+								</select>
+							</div>
+							<div class="col-auto">
+								<label for="rating">Rating:</label>
+       						<input type="number" name="rating" min="1" max="5" required>
+							</div>
+							<div class="col-auto">
+								<label for="review">Review:</label>
+        					<textarea name="review" required></textarea>
+							</div>
+       						 
+							<div class="col-auto">
+								<button class="btn btn-primary">
+									<span class="fa fa-paper-plane"></span>
+								</button>
+							</div>
+						</form>
+					</div>
+
+						<div id="resultados" class="blog-section">
+				<div class="container">
+					<div class="row">
+						<div class="p-3 p-lg-5 border bg-white">
+							<table class="table site-block-order-table mb-5">
+								<thead>
+									<th> Producto </th>
+									<th> Rating </th>
+									<th> Review </th>
+								</thead>
+								<tbody id="tablebody">
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 
 
