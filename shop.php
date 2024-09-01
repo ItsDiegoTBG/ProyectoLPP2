@@ -224,8 +224,8 @@
                     <tbody id="tablebody">
                         <?php
 						include 'back-end/get_reviews.php';
-                        if ($reviews) {
-                            foreach ($reviews as $review) {
+                        if ($allItemsArray) {
+                            foreach ($allItemsArray as $review) {
                                 echo '<tr>';
                                 echo '<td>' . htmlspecialchars($review['product_name']) . '</td>';
                                 echo '<td>' . htmlspecialchars($review['rating']) . '</td>';
