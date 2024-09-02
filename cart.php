@@ -123,15 +123,19 @@ session_start();
 													<div class="input-group-prepend">
 														<button class="btn btn-outline-black decrease" type="button" onclick="updateQuantity(<?php echo $key; ?>, 'decrease')">&minus;</button>
 													</div>
-													<input type="text" class="form-control text-center quantity-amount" value="<?php echo $item['quantity']; ?>" readonly>
+													<input type="text" class="form-control text-center quantity-amount" value="<?php echo $item['quantity']; ?>" readonly id="quantity-<?php echo $key; ?>">
 													<div class="input-group-append">
 														<button class="btn btn-outline-black increase" type="button" onclick="updateQuantity(<?php echo $key; ?>, 'increase')">&plus;</button>
 													</div>
 												</div>
 											</td>
-											<td>$<?php echo number_format($total_price, 2); ?></td>
 											<td>
-												<a href="back-end/remove-from-cart.php?key=<?php echo $key; ?>" class="btn btn-black btn-sm">X</a>
+												<span class="product-total-price" id="total-<?php echo $key; ?>" data-price="<?php echo $item['price']; ?>">
+													$<?php echo number_format($total_price, 2); ?>
+												</span>
+											</td>
+											<td>
+												<a href="javascript:void(0);" class="btn btn-black btn-sm" onclick="removeItem(this, '<?php echo $key; ?>')">X</a>
 											</td>
 										</tr>
 									<?php
@@ -149,23 +153,20 @@ session_start();
 			<div class="row">
 				<div class="col-md-6">
 					<div class="row mb-5">
-						<div class="col-md-6 mb-3 mb-md-0">
-							<button class="btn btn-black btn-sm btn-block" onclick="window.location.href='index.php';">Actualizar carrito</button>
-						</div>
 						<div class="col-md-6">
 							<button class="btn btn-outline-black btn-sm btn-block" onclick="window.location.href='index.php';">Continuar comprando</button>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<label class="text-black h4" for="coupon">Coupon</label>
-							<p>Enter your coupon code if you have one.</p>
+							<label class="text-black h4" for="coupon">Cupón</label>
+							<p>Ingresa un cupón para obtener un descuento</p>
 						</div>
 						<div class="col-md-8 mb-3 mb-md-0">
-							<input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
+							<input type="text" class="form-control py-3" id="coupon" placeholder="Código de cupón">
 						</div>
 						<div class="col-md-4">
-							<button class="btn btn-black">Apply Coupon</button>
+							<button class="btn btn-black" onclick="applyCoupon()">Aplicar cupón</button>
 						</div>
 					</div>
 				</div>
@@ -182,7 +183,7 @@ session_start();
 									<span class="text-black">Subtotal</span>
 								</div>
 								<div class="col-md-6 text-right">
-									<strong class="text-black">$<?php echo number_format($final_price, 2); ?></strong>
+									<strong class="text-black subtotal-cart-price">$<?php echo number_format($final_price, 2); ?></strong>
 								</div>
 							</div>
 							<div class="row mb-5">
@@ -190,10 +191,9 @@ session_start();
 									<span class="text-black">Total</span>
 								</div>
 								<div class="col-md-6 text-right">
-									<strong class="text-black">$<?php echo number_format($final_price, 2); ?></strong>
+									<strong class="text-black total-cart-price">$<?php echo number_format($final_price, 2); ?></strong>
 								</div>
 							</div>
-
 							<div class="row">
 								<div class="col-md-12">
 									<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location.href='index.php';">Finalizar compra</button>
@@ -218,14 +218,14 @@ session_start();
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="subscription-form">
-						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Suscríbete para recibir noticias de nuestros productos!</span></h3>
 
 						<form action="#" class="row g-3">
 							<div class="col-auto">
-								<input type="text" class="form-control" placeholder="Enter your name">
+								<input type="text" class="form-control" placeholder="Ingresa tu nombre">
 							</div>
 							<div class="col-auto">
-								<input type="email" class="form-control" placeholder="Enter your email">
+								<input type="email" class="form-control" placeholder="Ingresa tu correo">
 							</div>
 							<div class="col-auto">
 								<button class="btn btn-primary">
@@ -318,28 +318,6 @@ session_start();
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
-	<script>
-		function updateQuantity(key, action) {
-			const form = document.createElement('form');
-			form.method = 'POST';
-			form.action = 'back-end/update-quantity.php';
-
-			const inputKey = document.createElement('input');
-			inputKey.type = 'hidden';
-			inputKey.name = 'key';
-			inputKey.value = key;
-			form.appendChild(inputKey);
-
-			const inputAction = document.createElement('input');
-			inputAction.type = 'hidden';
-			inputAction.name = 'action';
-			inputAction.value = action;
-			form.appendChild(inputAction);
-
-			document.body.appendChild(form);
-			form.submit();
-		}
-	</script>
+	<script src="js/cart.js"></script>
 </body>
-
 </html>
