@@ -83,19 +83,30 @@
 
 		      		<!-- Start Column 1 -->
 					  <div class="col-12 col-md-4 col-lg-3 mb-5">
-					<form action="back-end/add-to-cart.php" method="POST">
+					<form class="Form" action="back-end/add-to-cart.php" method="POST">
 						<input type="hidden" name="product_name" value="Intel® Core i9-14900k">
 						<input type="hidden" name="product_price" value="548.99">
 						<input type="hidden" name="product_image" value="images/Intel-i9-14900k-01-removebg-preview.png">
 						<button type="submit" class="product-item" style="border: none; background: none;">
 							<img src="images/Intel-i9-14900k-01-removebg-preview.png" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Intel® Core i9-14900k</h3>
-							<strong class="product-price">$548.99</strong>
+							<strong class="product-price">$548.99</strong>					
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
 						</button>
 					</form>
+		<div class="info-btn-container">
+            <button class="more-info-btn" data-target="info-popup-1">Más Info</button>
+        </div>
+ 
+        <div id="info-popup-1" class="info-popup">
+            <div class="info-popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Más Información</h2>
+                <p>El Intel® Core i9-14900k es un procesador de alto rendimiento con 16 núcleos y 24 hilos, diseñado para ofrecer una experiencia de computación superior para juegos y aplicaciones profesionales.</p>
+            </div>
+        </div>
 				</div>
 					<!-- End Column 1 -->
 						
@@ -114,6 +125,17 @@
 							</span>
 						</button>
 					</form>
+					<div class="info-btn-container">
+            <button class="more-info-btn" data-target="info-popup-2">Más Info</button>
+        </div>
+       
+        <div id="info-popup-2" class="info-popup">
+            <div class="info-popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Más Información</h2>
+                <p>El AMD Ryzen™ 9 7900X es un potente procesador para computadoras de escritorio para gaming y streaming que está diseñado con 12 núcleos de CPU y 24 subprocesos, y tiene una velocidad de reloj base de 4,7 GHz.</p>
+            </div>
+        </div>
 				</div>
 					<!-- End Column 2 -->
 
@@ -132,6 +154,17 @@
 							</span>
 						</button>
 					</form>
+					<div class="info-btn-container">
+            <button class="more-info-btn" data-target="info-popup-3">Más Info</button>
+        </div>
+
+        <div id="info-popup-3" class="info-popup">
+            <div class="info-popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Más Información</h2>
+                <p>El AMD Ryzen™ 7 7700X es un procesador para computadoras de escritorio para gaming líder que está diseñado con ocho núcleos de CPU y 16 subprocesos, y tiene una velocidad de reloj turbo máxima de hasta 5,4 GHz.</p>
+            </div>
+        </div>
 				</div>
 					<!-- End Column 3 -->
 
@@ -152,6 +185,17 @@
 							</span>
 						</button>
 					</form>
+					<div class="info-btn-container">
+            <button class="more-info-btn" data-target="info-popup-4">Más Info</button>
+        </div>
+       
+        <div id="info-popup-4" class="info-popup">
+            <div class="info-popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Más Información</h2>
+                <p>Disfruta de tiempos de carga superveloces con un SSD de velocidad ultrarrápida, una experiencia más inmersiva gracias a la compatibilidad con respuesta háptica1, gatillos adaptativos1 y audio 3D1</p>
+            </div>
+        </div>
 				</div>
 					<!-- End Column 4 -->
 
@@ -171,6 +215,17 @@
 							</span>
 						</button>
 					</form>
+					<div class="info-btn-container">
+            <button class="more-info-btn" data-target="info-popup-5">Más Info</button>
+        </div>
+   
+        <div id="info-popup-5" class="info-popup">
+            <div class="info-popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Más Información</h2>
+                <p>Esta consola se ha sometido a un riguroso proceso de certificación, se ha probado para confirmar que funciona correctamente y se ha inspeccionado el hardware y la calidad estética. Disfruta de la velocidad y el rendimiento de nueva generación a un gran precio.</p>
+            </div>
+        </div>
 				</div>
 					<!-- End Column 1 -->
 						
@@ -189,6 +244,19 @@
 							</span>
 						</button>
 					</form>
+					<div class="info-btn-container">
+            <button class="more-info-btn" data-target="info-popup-6">Más Info</button>
+        </div>
+    
+        <div id="info-popup-6" class="info-popup">
+            <div class="info-popup-content">
+                <span class="close-popup">&times;</span>
+                <h2>Más Información</h2>
+                <p>Nintendo Switch se transforma para adaptarse a tu situación y te permite jugar a los títulos que quieras aunque no tengas mucho tiempo.
+
+Es una nueva era en la que no tienes que adaptar tu vida a los videojuegos: ahora es la consola la que se adapta a tu vida. Proximo Juego Mario y Luigi BrotherShip!</p>
+            </div>
+        </div>
 				</div>
 					<!-- End Column 2 -->
 
@@ -355,7 +423,7 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>
-		
+		<script src="js/shop.js"></script>
 	</body>
 
 </html>
