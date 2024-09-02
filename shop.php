@@ -82,88 +82,114 @@
 		      	<div class="row">
 
 		      		<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+					  <div class="col-12 col-md-4 col-lg-3 mb-5">
+					<form action="back-end/add-to-cart.php" method="POST">
+						<input type="hidden" name="product_name" value="Intel® Core i9-14900k">
+						<input type="hidden" name="product_price" value="548.99">
+						<input type="hidden" name="product_image" value="images/Intel-i9-14900k-01-removebg-preview.png">
+						<button type="submit" class="product-item" style="border: none; background: none;">
 							<img src="images/Intel-i9-14900k-01-removebg-preview.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
+							<h3 class="product-title">Intel® Core i9-14900k</h3>
+							<strong class="product-price">$548.99</strong>
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
-						</a>
-					</div> 
+						</button>
+					</form>
+				</div>
 					<!-- End Column 1 -->
 						
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+					<form action="back-end/add-to-cart.php" method="POST">
+						<input type="hidden" name="product_name" value="AMD Ryzen™ 9 7900X">
+						<input type="hidden" name="product_price" value="365.55">
+						<input type="hidden" name="product_image" value="images/2505503-ryzen-9-7900x-removebg-preview.png">
+						<button type="submit" class="product-item" style="border: none; background: none;">
 							<img src="images/2505503-ryzen-9-7900x-removebg-preview.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
+							<h3 class="product-title">AMD Ryzen™ 9 7900X</h3>
+							<strong class="product-price">$365.55</strong>
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
-						</a>
-					</div> 
+						</button>
+					</form>
+				</div>
 					<!-- End Column 2 -->
 
 					<!-- Start Column 3 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+					<form action="back-end/add-to-cart.php" method="POST">
+						<input type="hidden" name="product_name" value="AMD Ryzen™ 7 7700X">
+						<input type="hidden" name="product_price" value="277.85">
+						<input type="hidden" name="product_image" value="images/2505503-ryzen-7-7700x-removebg-preview.png">
+						<button type="submit" class="product-item" style="border: none; background: none;">
 							<img src="images/2505503-ryzen-7-7700x-removebg-preview.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">$78.00</strong>
-
+							<h3 class="product-title">AMD Ryzen™ 7 7700X</h3>
+							<strong class="product-price">$277.85</strong>
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
-						</a>
-					</div>
+						</button>
+					</form>
+				</div>
 					<!-- End Column 3 -->
 
 					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
-							<img src="images/711719556176-SONY-1200x1200-03.-500x500-removebg-preview.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">$43.00</strong>
 
+
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<form action="back-end/add-to-cart.php" method="POST">
+						<input type="hidden" name="product_name" value="PlayStation 5">
+						<input type="hidden" name="product_price" value="499.99">
+						<input type="hidden" name="product_image" value="images/711719556176-SONY-1200x1200-03.-500x500-removebg-preview.png">
+						<button type="submit" class="product-item" style="border: none; background: none;">
+							<img src="images/711719556176-SONY-1200x1200-03.-500x500-removebg-preview.png" class="img-fluid product-thumbnail">
+							<h3 class="product-title">PlayStation 5</h3>
+							<strong class="product-price">$499.99</strong>
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
-						</a>
-					</div>
+						</button>
+					</form>
+				</div>
 					<!-- End Column 4 -->
 
 
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+					<form action="back-end/add-to-cart.php" method="POST">
+						<input type="hidden" name="product_name" value="Xbox SX">
+						<input type="hidden" name="product_price" value="499.99">
+						<input type="hidden" name="product_image" value="images/1203d97e-4bf3-4b06-96e1-02d6cdeac337-removebg-preview.png">
+						<button type="submit" class="product-item" style="border: none; background: none;">
 							<img src="images/1203d97e-4bf3-4b06-96e1-02d6cdeac337-removebg-preview.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
+							<h3 class="product-title">Xbox SX</h3>
+							<strong class="product-price">$499.99</strong>
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
-						</a>
-					</div> 
+						</button>
+					</form>
+				</div>
 					<!-- End Column 1 -->
 						
 					<!-- Start Column 2 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+					<form action="back-end/add-to-cart.php" method="POST">
+						<input type="hidden" name="product_name" value="Nintendo Switch">
+						<input type="hidden" name="product_price" value="399.99">
+						<input type="hidden" name="product_image" value="images/51Gz7IimgoL._AC_SL1024_-removebg-preview.png">
+						<button type="submit" class="product-item" style="border: none; background: none;">
 							<img src="images/51Gz7IimgoL._AC_SL1024_-removebg-preview.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
-
+							<h3 class="product-title">Nintendo Switch</h3>
+							<strong class="product-price">$399.99</strong>
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
 							</span>
-						</a>
-					</div> 
+						</button>
+					</form>
+				</div>
 					<!-- End Column 2 -->
 
 					
