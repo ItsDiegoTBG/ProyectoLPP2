@@ -1,10 +1,19 @@
 <?php
 session_start();
 
-if (isset($_GET['key']) && isset($_SESSION['cart'][$_GET['key']])) {
-    unset($_SESSION['cart'][$_GET['key']]);
+$response = array('success' => false, 'final_price' => 0);
+
+if (isset($_POST['key']) && isset($_SESSION['cart'][$_POST['key']])) {
+    unset($_SESSION['cart'][$_POST['key']]);
+
+    $final_price = 0;
+    foreach ($_SESSION['cart'] as $item) {
+        $final_price += $item['price'] * $item['quantity'];
+    }
+
+    $response['success'] = true;
+    $response['final_price'] = number_format($final_price, 2);
 }
 
-header("Location: ../cart.php");
-exit();
+echo json_encode($response);
 ?>
