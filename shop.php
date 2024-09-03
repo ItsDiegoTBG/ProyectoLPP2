@@ -280,7 +280,7 @@ Es una nueva era en la que no tienes que adaptar tu vida a los videojuegos: ahor
 									<option  value="AMD Ryzen™ 9 7900X">AMD Ryzen™ 9 7900X</option>
 									<option  value="AMD Ryzen™ 7 7700X">AMD Ryzen™ 7 7700X</option>
 									<option  value="PlayStation 5">PlayStation 5</option>
-									<option  value="XBOX Series X/S">XBOX Series X/S</option>
+									<option  value="XBOX Series XS">XBOX Series X/S</option>
 									<option  value="Nintendo Switch">Nintendo Switch</option>
 								</select>
 							</div>

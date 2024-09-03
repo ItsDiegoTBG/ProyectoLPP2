@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $reviewsRef->push($newReview);
 
-    echo "Review submitted successfully!";
+    header("Location: ../shop.php");
+    exit();
 }
 ?>
