@@ -1,5 +1,5 @@
 <?php
-require 'firebase.php';
+require_once 'firebase.php';
 
 $allItemsArray = array();
 $reviewsRef = $database->getReference('reviews/');
