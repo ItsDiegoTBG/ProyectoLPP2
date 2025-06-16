@@ -1,2 +1,4 @@
 # Ignorar archivos de credenciales
 back-end/firebase_credentials.json
+.scannerwork
+sonar-scanner.properties
