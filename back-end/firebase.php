@@ -11,4 +11,3 @@ $factory = (new Factory)
      ->withDatabaseUri('https://lpp2-8c9a9-default-rtdb.firebaseio.com/');
 
 $database = $factory->createDatabase();
-?>
